@@ -1,5 +1,27 @@
 <?php
+    include 'config.php';
+    $mensaje = "";
+    $clase_mensaje = "";
 
+    if($_SERVER["REQUEST METHOD"] == 'POST'){
+        $set_num = $_POST["set_num"];
+        $name = $_POST["name"];
+        $year =  $_POST["year"];
+        $nu_parts = $_POST["num_parts"];
+        $theme_id = $_POST["theme_id"];
+
+        $sql = "INSERT INTO sets (set_num, name, year, theme_id, num_parts)
+            VALUES ('$set_num', $name, $year, $theme_id, $num_parts)";
+        $query = mysqli_query($conexion, $sql);
+        if($query){
+            $mensaje = "FUE UN EXITO";
+            $clase_mensaje = "mensaje-exito";
+        }
+        else{
+            $mensaje = "OCURRIO UN ERROR";
+            $clase_mensaje = "mensaje-error";
+        }
+    }
 ?>
 
 <!DOCTYPE html>

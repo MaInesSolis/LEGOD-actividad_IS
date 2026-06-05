@@ -1,5 +1,5 @@
 <?php
-    include '/config.php';
+    include 'config.php';
 
     $mensaje = "";
     $clase_mensaje = "";
@@ -36,10 +36,10 @@
     </div>
 
     <!-- PHP --> 
-    <div class="mensaje <?php  ?>">
+    <div class="mensaje <?php echo $clase_mensaje ?>">
         <h3>Resultado de la operación:</h3>
         <!-- PHP --> 
-        <p><?php  ?></p>
+        <p><?php echo $mensaje ?></p>
         <br>
         <a href="index.html" style="color: #000; font-weight:bold;">Volver a los resultados de búsqueda</a>
     </div>
